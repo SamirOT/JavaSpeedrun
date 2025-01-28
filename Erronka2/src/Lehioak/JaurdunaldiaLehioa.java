@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Jaurdunaldia extends JFrame {
+public class JaurdunaldiaLehioa extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -26,7 +26,7 @@ public class Jaurdunaldia extends JFrame {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                Jaurdunaldia frame = new Jaurdunaldia();
+            	JaurdunaldiaLehioa frame = new JaurdunaldiaLehioa();
                 frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -37,7 +37,7 @@ public class Jaurdunaldia extends JFrame {
     /**
      * Create the frame.
      */
-    public Jaurdunaldia() {
+    public JaurdunaldiaLehioa() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 723, 585);
         contentPane = new JPanel();
@@ -55,7 +55,7 @@ public class Jaurdunaldia extends JFrame {
 
         // Logo en NAV
         JLabel lblLogo = new JLabel("");
-        lblLogo.setIcon(new ImageIcon(Jaurdunaldia.class.getResource("/IMG/Logo txikito.png")));
+        lblLogo.setIcon(new ImageIcon(JaurdunaldiaLehioa.class.getResource("/IMG/Logo txikito.png")));
         NAV.add(lblLogo, BorderLayout.WEST);
 
         // Botones NAV
