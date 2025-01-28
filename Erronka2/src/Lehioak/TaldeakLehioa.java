@@ -15,8 +15,8 @@ public class TaldeakLehioa extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JTextField txtTaldearenIzenaIdatzi;
-    private JTextField txtTaldearenHerrialdeaIdatzi;
+    private JTextField txtIzena;
+    private JTextField txtHerrialdea;
 	private DefaultTableModel dtm;
     private JTable tabla;
 
@@ -95,19 +95,19 @@ public class TaldeakLehioa extends JFrame {
         lblHerrialdea.setBounds(10, 68, 90, 30);
         panelDatuak.add(lblHerrialdea);
         
-        txtTaldearenIzenaIdatzi = new JTextField();
-        txtTaldearenIzenaIdatzi.setBackground(Color.WHITE);
-        txtTaldearenIzenaIdatzi.setText("Taldearen izena idatzi");
-        txtTaldearenIzenaIdatzi.setBounds(158, 10, 148, 25);
-        panelDatuak.add(txtTaldearenIzenaIdatzi);
-        txtTaldearenIzenaIdatzi.setColumns(10);
+        txtIzena = new JTextField();
+        txtIzena.setBackground(Color.WHITE);
+        txtIzena.setText("Taldearen izena idatzi");
+        txtIzena.setBounds(158, 10, 148, 25);
+        panelDatuak.add(txtIzena);
+        txtIzena.setColumns(10);
         
-        txtTaldearenHerrialdeaIdatzi = new JTextField();
-        txtTaldearenHerrialdeaIdatzi.setBackground(Color.WHITE);
-        txtTaldearenHerrialdeaIdatzi.setText("Taldearen herrialdea idatzi");
-        txtTaldearenHerrialdeaIdatzi.setColumns(10);
-        txtTaldearenHerrialdeaIdatzi.setBounds(158, 68, 148, 25);
-        panelDatuak.add(txtTaldearenHerrialdeaIdatzi);
+        txtHerrialdea = new JTextField();
+        txtHerrialdea.setBackground(Color.WHITE);
+        txtHerrialdea.setText("Taldearen herrialdea idatzi");
+        txtHerrialdea.setColumns(10);
+        txtHerrialdea.setBounds(158, 68, 148, 25);
+        panelDatuak.add(txtHerrialdea);
         
         JButton btnGorde = new JButton("Gorde");
         btnGorde.setBounds(493, 12, 102, 35);
