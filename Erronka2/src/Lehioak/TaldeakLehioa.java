@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import Objektuak.Denboraldia;
+
 import java.awt.FlowLayout;
 import java.awt.*;
 import javax.swing.*;
@@ -15,36 +17,45 @@ public class TaldeakLehioa extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JTextField txtIzena;
-    private JTextField txtHerrialdea;
+    private JTextField txtTaldearenIzenaIdatzi;
+    private JTextField txtTaldearenHerrialdeaIdatzi;
 	private DefaultTableModel dtm;
     private JTable tabla;
+    private Denboraldia denboraldia; // Instancia para almacenar el año del denboraldia
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-            try {
-                TaldeakLehioa frame = new TaldeakLehioa();
-                frame.setVisible(true);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-    }
+
+//    /**
+//     * Launch the application.
+//     */
+//    public static void main(String[] args) {
+//        EventQueue.invokeLater(() -> {
+//            try {
+//                TaldeakLehioa frame = new TaldeakLehioa(denboraldia);
+//                frame.setVisible(true);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+//    }
 
     /**
      * Create the frame.
      */
-    public TaldeakLehioa() {
+    public TaldeakLehioa(Denboraldia denboraldia) {
+        this.denboraldia = denboraldia; // Guardar la instancia recibida
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 723, 585);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(255, 255, 255));
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+
+        // Muestra el año del denboraldia en la interfaz gráfica
+        JLabel lblDenboraldia = new JLabel("Denboraldia: " + denboraldia.getUrtea());
+        lblDenboraldia.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        lblDenboraldia.setBounds(10, 10, 200, 30);
+        contentPane.add(lblDenboraldia);
 
         // Crear panel NAV con BorderLayout
         JPanel NAV = new JPanel();
@@ -95,19 +106,19 @@ public class TaldeakLehioa extends JFrame {
         lblHerrialdea.setBounds(10, 68, 90, 30);
         panelDatuak.add(lblHerrialdea);
         
-        txtIzena = new JTextField();
-        txtIzena.setBackground(Color.WHITE);
-        txtIzena.setText("Taldearen izena idatzi");
-        txtIzena.setBounds(158, 10, 148, 25);
-        panelDatuak.add(txtIzena);
-        txtIzena.setColumns(10);
+        txtTaldearenIzenaIdatzi = new JTextField();
+        txtTaldearenIzenaIdatzi.setBackground(Color.WHITE);
+        txtTaldearenIzenaIdatzi.setText("Taldearen izena idatzi");
+        txtTaldearenIzenaIdatzi.setBounds(158, 10, 148, 25);
+        panelDatuak.add(txtTaldearenIzenaIdatzi);
+        txtTaldearenIzenaIdatzi.setColumns(10);
         
-        txtHerrialdea = new JTextField();
-        txtHerrialdea.setBackground(Color.WHITE);
-        txtHerrialdea.setText("Taldearen herrialdea idatzi");
-        txtHerrialdea.setColumns(10);
-        txtHerrialdea.setBounds(158, 68, 148, 25);
-        panelDatuak.add(txtHerrialdea);
+        txtTaldearenHerrialdeaIdatzi = new JTextField();
+        txtTaldearenHerrialdeaIdatzi.setBackground(Color.WHITE);
+        txtTaldearenHerrialdeaIdatzi.setText("Taldearen herrialdea idatzi");
+        txtTaldearenHerrialdeaIdatzi.setColumns(10);
+        txtTaldearenHerrialdeaIdatzi.setBounds(158, 68, 148, 25);
+        panelDatuak.add(txtTaldearenHerrialdeaIdatzi);
         
         JButton btnGorde = new JButton("Gorde");
         btnGorde.setBounds(493, 12, 102, 35);
